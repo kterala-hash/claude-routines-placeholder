@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Health – Weekly Sprint Status Report | GD Sprint 47</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6fa; color: #222; font-size: 14px; }
+  
+  .header { background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 100%); color: white; padding: 32px 40px 24px; }
+  .header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
+  .header .meta { font-size: 13px; opacity: 0.85; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 10px; }
+  .header .meta span { display: flex; align-items: center; gap: 5px; }
+
+  .summary-bar { background: white; padding: 16px 40px; border-bottom: 1px solid #e0e6ee; display: flex; gap: 24px; flex-wrap: wrap; }
+  .summary-pill { display: flex; align-items: center; gap: 8px; background: #f0f4fa; border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 600; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot-green { background: #28a745; }
+  .dot-blue { background: #0078d4; }
+  .dot-orange { background: #fd7e14; }
+  .dot-gray { background: #868e96; }
+
+  .main { max-width: 1100px; margin: 28px auto; padding: 0 24px; }
+
+  .section { background: white; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); margin-bottom: 22px; overflow: hidden; }
+  .section-header { background: #1a3a5c; color: white; padding: 13px 20px; display: flex; align-items: center; gap: 10px; }
+  .section-icon { font-size: 18px; }
+  .section-title { font-size: 15px; font-weight: 700; letter-spacing: 0.2px; }
+  .section-count { margin-left: auto; background: rgba(255,255,255,0.2); border-radius: 12px; padding: 2px 10px; font-size: 11px; font-weight: 600; }
+
+  .status-group { padding: 0 20px; }
+  .status-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 10px 0 4px; border-top: 1px solid #f0f3f8; margin-top: 4px; display: flex; align-items: center; gap: 7px; }
+  .status-label:first-child { border-top: none; padding-top: 14px; }
+  .status-label-completed { color: #28a745; }
+  .status-label-qa { color: #0078d4; }
+  .status-label-inprogress { color: #fd7e14; }
+  .status-label-planned { color: #868e96; }
+  .status-label-onhold { color: #c0392b; }
+
+  .item-list { list-style: none; padding-bottom: 6px; }
+  .item-list li { padding: 5px 0 5px 16px; border-left: 2px solid #e8ecf3; margin: 3px 0; font-size: 13px; color: #334155; line-height: 1.45; }
+  .item-list li:hover { border-left-color: #2e6da4; background: #f8faff; }
+
+  .status-badge { display: inline-block; border-radius: 3px; padding: 1px 6px; font-size: 10px; font-weight: 700; margin-left: 6px; vertical-align: middle; }
+  .badge-completed { background: #d4edda; color: #155724; }
+  .badge-qa { background: #cce5ff; color: #004085; }
+  .badge-inprogress { background: #fff3cd; color: #856404; }
+  .badge-planned { background: #f1f3f5; color: #495057; }
+
+  .footer { text-align: center; color: #888; font-size: 11px; padding: 24px; }
+
+  @media print { body { background: white; } .main { max-width: 100%; padding: 0 16px; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Digital Health — Weekly Sprint Status Report</h1>
+  <div class="meta">
+    <span>📅 Sprint: GD Sprint 47</span>
+    <span>🗓️ June 9 – June 22, 2026</span>
+    <span>📊 Project: Digital Health</span>
+    <span>🏢 Organization: MarsDevTeam</span>
+    <span>📆 Report Date: June 15, 2026</span>
+  </div>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-pill"><span class="dot dot-green"></span> Completed: 35</div>
+  <div class="summary-pill"><span class="dot dot-blue"></span> In QA / Review: 12</div>
+  <div class="summary-pill"><span class="dot dot-orange"></span> In Progress: 15</div>
+  <div class="summary-pill"><span class="dot dot-gray"></span> Planned: 18</div>
+</div>
+
+<div class="main">
+
+  <!-- ToothScan 2.0 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🦷</span>
+      <span class="section-title">ToothScan 2.0 — Guided Photo Capture &amp; Enhanced Analysis</span>
+      <span class="section-count">24 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-completed">✅ Completed</div>
+      <ul class="item-list">
+        <li>Resolved branding inconsistency — all pages now display "ToothScan" instead of "ToothScan Plus"</li>
+        <li>Fixed camera icon placement on third photo overlay screen</li>
+        <li>Corrected spelling error on photo upload success page</li>
+        <li>Fixed pet name defaulting to "Scout" across questionnaire screens</li>
+        <li>Restored back navigation from results page 2</li>
+        <li>Fixed internal pop-up hyperlinks opening in new tab instead of inline</li>
+        <li>Resolved white line highlights appearing across pages</li>
+        <li>Fixed "Verify Photos" CTA incorrectly enabled when image sizing validation error is active</li>
+        <li>Resolved inconsistent error message when uploading mixed valid/invalid images</li>
+        <li>Fixed disabled "Next" button remaining clickable on questionnaire results page</li>
+        <li>Fixed result page 1 disappearing when navigating to result page 2</li>
+      </ul>
+
+      <div class="status-label status-label-qa">🔵 In QA</div>
+      <ul class="item-list">
+        <li>ToothScan 2.0 standalone user journey template created and under validation</li>
+        <li>Loading screen with fun facts during image upload — under QA verification</li>
+      </ul>
+
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>Integration testing for ToothScan 2.0 standalone application</li>
+        <li>Frontend support for ToothScan 2.0 standalone integration testing</li>
+        <li>Backend support for ToothScan Plus standalone integration testing</li>
+        <li>Implementing image resizing with aspect ratio preservation before upload</li>
+        <li>Resolving validation error message inconsistency across upload flows</li>
+      </ul>
+
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>ToothScan 2.0 user journey deployment to PreProd and Prod environments</li>
+        <li>Verify GA tracking tags for ToothScan 2.0</li>
+        <li>Review analysis responses for compressed vs. non-compressed image uploads</li>
+        <li>Update image upload error screens with new Figma designs and extended error messages</li>
+        <li>Improve misleading error message for non-dog teeth image submissions</li>
+        <li>Address mobile-specific observations and layout issues for ToothScan 2.0</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cat WeightScan -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🐱</span>
+      <span class="section-title">Cat WeightScan</span>
+      <span class="section-count">9 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-completed">✅ Completed</div>
+      <ul class="item-list">
+        <li>Discovery completed for cat breed list implementation with coat length attribute</li>
+      </ul>
+
+      <div class="status-label status-label-qa">🔵 In QA</div>
+      <ul class="item-list">
+        <li>Extending cat breed list with breed coat length attribute — implementation under QA</li>
+      </ul>
+
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>Backend services implementation and additional properties support for Cat Weight Scan</li>
+        <li>Implementing "Calculate Your Cat's Body Condition Score" component with schema, drag-and-drop, macro, and preview support</li>
+      </ul>
+
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>CAS backend changes to support Cat WeightScan API</li>
+        <li>Tool instruction card enhancements with schema and component support (SDK)</li>
+        <li>New result screen — "Calculate Your Cat's Body Condition Score" component (SDK)</li>
+        <li>Screen lifecycle actions for submission tracking in Cat BCS early exit scenarios</li>
+        <li>Conditional screen rendering based on date of birth, breed, and pregnancy validations <em>(On Hold)</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SDK Manager -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">⚙️</span>
+      <span class="section-title">SDK Manager Enhancements</span>
+      <span class="section-count">16 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-completed">✅ Completed</div>
+      <ul class="item-list">
+        <li>Resolved missing comments in configuration history timeline view</li>
+        <li>Enabled SDK cache and localized error-message cache support in target monorepo</li>
+      </ul>
+
+      <div class="status-label status-label-qa">🔵 In QA</div>
+      <ul class="item-list">
+        <li>Config ID display bug — configuration ID not updating when bundle version changes in catalog</li>
+        <li>Release notes alignment issue when large text is entered</li>
+        <li>Bundle catalog issues — multiple items identified and under review</li>
+        <li>Config ID validation defect — under QA review</li>
+      </ul>
+
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>VITE_ENV configuration added for SDK Manager in PreProd and Prod environments</li>
+        <li>Configuration-driven backend URL resolution for Check &amp; Care SDKs (Development)</li>
+        <li>Decision rules implementation for configurable journey navigation</li>
+        <li>Screen lifecycle actions and terminal outcome persistence</li>
+        <li>History, integration, and creation flow UI/UX improvements</li>
+      </ul>
+
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>Review save, delete, and publish behaviors for versions and variants</li>
+        <li>Configuration-driven backend URL resolution for Check &amp; Care SDKs (QA validation)</li>
+        <li>SDK UI indicators for Blocked and Inactive status in Check &amp; Care SDKs</li>
+        <li>Fix error shown after uploading CSV breed list file</li>
+        <li>Add alert on deletion of assigned bundle</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Feline Immunity Check -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🐾</span>
+      <span class="section-title">Feline Immunity Check</span>
+      <span class="section-count">1 item</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-qa">🔵 In QA</div>
+      <ul class="item-list">
+        <li>Feline immunity check template updated with trimmed and finalized content — under QA validation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Einstein Bot -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🤖</span>
+      <span class="section-title">Einstein Bot Integration</span>
+      <span class="section-count">1 item</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>Promote Einstein Bot integration changes to Production environment</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Weight Check Tools -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">⚖️</span>
+      <span class="section-title">Weight Check Tools (KWC / PWC)</span>
+      <span class="section-count">2 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-completed">✅ Completed</div>
+      <ul class="item-list">
+        <li>Corrected breed names across Kitten Weight Check SDK, templates, and historical submissions</li>
+      </ul>
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>Update minimum and maximum weight ranges for Puppy and Kitten Weight Check tools</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DevOps & Infrastructure -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔧</span>
+      <span class="section-title">DevOps &amp; Infrastructure</span>
+      <span class="section-count">4 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>Sprint 47 DevOps activities — domain configuration in CAPI, PAT token rotation, and Azure Function App workflow setup</li>
+        <li>Production log monitoring for Sprint 47</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Backend Infrastructure -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🗄️</span>
+      <span class="section-title">Backend Infrastructure</span>
+      <span class="section-count">3 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>Replicating outcomes-operational-preprod Cosmos DB data to statistical container</li>
+        <li>Increasing Redis connection and operation timeouts across backend services</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Misc -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🛠️</span>
+      <span class="section-title">General / Cross-Cutting Fixes</span>
+      <span class="section-count">20 items</span>
+    </div>
+    <div class="status-group">
+      <div class="status-label status-label-completed">✅ Completed</div>
+      <ul class="item-list">
+        <li>Fixed "Verify Photos" button taking longer than expected — loader added</li>
+        <li>Fixed "Submit Validated Photos" button enabled incorrectly after invalid photo upload</li>
+        <li>Updated pet name label from "dog's name" to "your pet's name"</li>
+        <li>Fixed "Go back" navigation to return to Instructions screen</li>
+        <li>Updated dog images across all screens per Figma designs</li>
+        <li>Restored missing "Next" button on the last question screen</li>
+        <li>Fixed questionnaire result description display and formatting</li>
+        <li>Resolved white background on description beneath questionnaire results</li>
+        <li>Updated SKIPPED state background color and matched font size to Figma</li>
+        <li>Renamed "Verify Photos" button to "Submit Photos"</li>
+        <li>Updated photo submission progress text for clarity</li>
+        <li>Fixed middle description updating when at least one valid photo is uploaded</li>
+        <li>Safari layout fix — spacing between words on Question 4</li>
+        <li>Fixed second "Fun Facts" background color showing white</li>
+        <li>Fixed Question 4 not displaying fully on screen</li>
+        <li>Fixed "Tap for more details" option not responding on results screen</li>
+        <li>Updated loader screen text during image upload</li>
+      </ul>
+
+      <div class="status-label status-label-qa">🔵 In QA</div>
+      <ul class="item-list">
+        <li>PawScan interactions — "actions" not saving in Dev environment</li>
+      </ul>
+
+      <div class="status-label status-label-inprogress">🟠 In Progress</div>
+      <ul class="item-list">
+        <li>Photo preview image box alignment fix</li>
+      </ul>
+
+      <div class="status-label status-label-planned">⚪ Planned</div>
+      <ul class="item-list">
+        <li>Implement localization support for "Results" string in download report header</li>
+        <li>Fix preview screen image stretching on capture/upload</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Digital Health — GD Sprint 47 Status Report &nbsp;|&nbsp; Generated: June 15, 2026 &nbsp;|&nbsp; MarsDevTeam / Azure DevOps
+</div>
+
+</body>
+</html>
