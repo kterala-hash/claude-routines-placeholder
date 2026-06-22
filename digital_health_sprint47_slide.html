@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Health – Sprint 47 Status Slide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0f0f1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .slide {
+    width: 1200px;
+    background: #1a1a2e;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* HEADER */
+  .slide-header {
+    background: linear-gradient(135deg, #C41230 0%, #8b0e24 50%, #1a1a2e 100%);
+    padding: 22px 36px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slide-title { color: white; }
+  .slide-title h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .slide-title .sub { font-size: 12px; opacity: 0.75; margin-top: 3px; }
+  .slide-meta {
+    text-align: right;
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .sprint-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: white;
+    font-weight: 600;
+  }
+
+  /* SUMMARY ROW */
+  .summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .sum-card {
+    padding: 12px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.07);
+  }
+  .sum-card:last-child { border-right: none; }
+  .sum-num { font-size: 26px; font-weight: 700; line-height: 1; }
+  .sum-lbl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px; }
+  .sc0 { color: #4ade80; } .sc0 .sum-lbl { color: #86efac; }
+  .sc1 { color: #60a5fa; } .sc1 .sum-lbl { color: #93c5fd; }
+  .sc2 { color: #fbbf24; } .sc2 .sum-lbl { color: #fcd34d; }
+  .sc3 { color: #c084fc; } .sc3 .sum-lbl { color: #d8b4fe; }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+    padding: 1px;
+  }
+
+  .cell {
+    background: #1e1e3a;
+    padding: 14px 16px;
+  }
+
+  .cell-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .cell-icon { font-size: 14px; }
+
+  .tag-row { margin-bottom: 7px; }
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+  }
+  .tag-done { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .tag-qa   { background: rgba(96,165,250,0.15); color: #60a5fa; }
+  .tag-wip  { background: rgba(251,191,36,0.15); color: #fbbf24; }
+  .tag-plan { background: rgba(192,132,252,0.15); color: #c084fc; }
+
+  ul.slist { list-style: none; padding: 0; }
+  ul.slist li {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.78);
+    padding: 2px 0 2px 10px;
+    position: relative;
+    line-height: 1.4;
+    margin-bottom: 1px;
+  }
+  ul.slist li::before {
+    content: '·';
+    position: absolute;
+    left: 2px;
+    color: rgba(255,255,255,0.3);
+    font-size: 14px;
+    line-height: 1;
+    top: 1px;
+  }
+
+  .divider { height: 3px; background: rgba(255,255,255,0.04); }
+
+  /* FOOTER */
+  .slide-footer {
+    padding: 8px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .slide-footer span { font-size: 10px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- HEADER -->
+  <div class="slide-header">
+    <div class="slide-title">
+      <h1>Digital Health &mdash; Weekly Status Report</h1>
+      <div class="sub">Mars Digital Health Platform &nbsp;·&nbsp; Azure DevOps Board &nbsp;·&nbsp; GD Core Team</div>
+    </div>
+    <div class="slide-meta">
+      <div><span class="sprint-pill">GD Sprint 47 &nbsp;|&nbsp; Jun 9 – Jun 22, 2026</span></div>
+      <div style="margin-top:6px;">Report Date: June 22, 2026</div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-row">
+    <div class="sum-card sc0"><div class="sum-num">42</div><div class="sum-lbl">Completed</div></div>
+    <div class="sum-card sc1"><div class="sum-num">15</div><div class="sum-lbl">In QA / Review</div></div>
+    <div class="sum-card sc2"><div class="sum-num">23</div><div class="sum-lbl">In Progress</div></div>
+    <div class="sum-card sc3"><div class="sum-num">31</div><div class="sum-lbl">Planned / New</div></div>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <!-- TOOTHSCAN 2.0 -->
+    <div class="cell">
+      <div class="cell-title"><span class="cell-icon">🦷</span> ToothScan 2.0</div>
+
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Resolved 28 UI &amp; UX defects — navigation, branding, image display, photo submission</li>
+        <li>Fixed button behavior: Next button, CTA states, back navigation</li>
+        <li>Visual corrections: colors, fonts, camera overlay, Safari spacing</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-qa">● QA</span></div>
+      <ul class="slist">
+        <li>Loading screen with fun facts during image processing</li>
+        <li>Image resizing with aspect ratio preservation</li>
+        <li>Compressed vs. non-compressed analysis response review</li>
+        <li>URL navigation &amp; additional resources page fix (Stage)</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>Resolving inconsistent validation error messaging</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-plan">◌ Planned</span></div>
+      <ul class="slist">
+        <li>Update image upload error screens (Figma)</li>
+        <li>Integration testing (QA, FE, BE)</li>
+        <li>User journey for PreProd &amp; Prod</li>
+        <li>Mobile camera permissions review (Stage)</li>
+      </ul>
+    </div>
+
+    <!-- CAT WEIGHTSCAN + FELINE IMMUNITY -->
+    <div class="cell">
+      <div class="cell-title"><span class="cell-icon">🐱</span> Cat WeightScan</div>
+
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Cat breed list extension — discovery completed</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-qa">● QA</span></div>
+      <ul class="slist">
+        <li>New Body Condition Score result screen (SDK &amp; SDK Manager)</li>
+        <li>Extended breed list with coat length data</li>
+        <li>Breed-coat length static data implementation</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>Backend services &amp; additional properties for Cat WeightScan API</li>
+        <li>CAS changes for Cat WeightScan API integration</li>
+        <li>Cat WeightScan service config &amp; property patch script</li>
+        <li>CAS SAS URL &amp; cat BCS configuration</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-plan">◌ Planned</span></div>
+      <ul class="slist">
+        <li>Conditional screen rendering by DOB &amp; breed</li>
+        <li>Tool Instruction Card enhancements (SDK)</li>
+        <li>Screen lifecycle actions for submission tracking</li>
+      </ul>
+
+      <div class="divider" style="margin:10px 0;"></div>
+
+      <div class="cell-title" style="margin-bottom:8px;"><span class="cell-icon">💉</span> Feline Immunity Check</div>
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Updated template with correct science page URL</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-qa">● QA</span></div>
+      <ul class="slist">
+        <li>Updated template with new trim data</li>
+      </ul>
+    </div>
+
+    <!-- SDK MANAGER -->
+    <div class="cell">
+      <div class="cell-title"><span class="cell-icon">🗺️</span> SDK Manager – Nav &amp; Enhancements</div>
+
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Decision rules engine for configurable journey navigation (FE + BE)</li>
+        <li>Screen lifecycle actions &amp; terminal outcome persistence</li>
+        <li>Promoted Einstein Bot integration to production</li>
+        <li>Resolved Config ID defects: history display, version update, copy-paste</li>
+        <li>Resolved Bundle Catalog &amp; Release Notes alignment bugs</li>
+        <li>Updated SDK Integration Guide to stable Bundle URL format</li>
+        <li>Configured IAMS (US) Poopscan &amp; Puppy Weight Check for Config ID</li>
+        <li>Added VITE_ENV for SDK Manager in PreProd &amp; Prod</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>Navigation rules &amp; view conditions schema (Backend)</li>
+        <li>UI/UX improvements for History, Integration &amp; Create flows</li>
+        <li>Autocomplete CSV upload error resolution</li>
+        <li>SDK version save/delete/publish behavior review</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:8px;"><span class="tag tag-plan">◌ Planned</span></div>
+      <ul class="slist">
+        <li>Navigation Rules Builder UX design &amp; implementation (FE)</li>
+        <li>Navigation rules preview &amp; simulation in SDK Manager</li>
+        <li>Einstein Bot Script update for production endpoints</li>
+        <li>Blocked/Inactive status UI in Check &amp; Care SDKs</li>
+        <li>Config ID version sync &amp; draft status visibility fix</li>
+      </ul>
+    </div>
+
+    <!-- MONOREPO + DEVOPS + MISC -->
+    <div class="cell">
+      <div class="cell-title"><span class="cell-icon">🔗</span> Monorepo Migration</div>
+
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>SDK cache &amp; localized error-message cache support enabled</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>Config-driven backend URL resolution for Check &amp; Care SDKs (FE)</li>
+        <li>Rollout to Check SDK, Care SDK, and SDK Manager</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-plan">◌ Planned</span></div>
+      <ul class="slist">
+        <li>QA validation for configuration-driven URL resolution</li>
+        <li>Refactor backend jobs into workers folder (documentation)</li>
+      </ul>
+
+      <div class="divider" style="margin:10px 0;"></div>
+
+      <div class="cell-title" style="margin-bottom:8px;"><span class="cell-icon">🛠️</span> DevOps Practices</div>
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Added CAPI domain configuration</li>
+        <li>Created local Docker infra for MongoDB &amp; Cosmos DB</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>PAT token refresh &amp; Azure Function App workflow</li>
+        <li>Feature flag service integration across backend</li>
+      </ul>
+
+      <div class="divider" style="margin:10px 0;"></div>
+
+      <div class="cell-title" style="margin-bottom:8px;"><span class="cell-icon">📋</span> Misc</div>
+      <div class="tag-row"><span class="tag tag-done">✓ Completed</span></div>
+      <ul class="slist">
+        <li>Corrected breed names for Kitten Weight Check (SDK, templates, history)</li>
+        <li>Increased Redis timeouts for backend resilience</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-wip">▶ In Progress</span></div>
+      <ul class="slist">
+        <li>Cosmos DB data replication to statistical DB</li>
+        <li>Localization for "Results" in download report header</li>
+        <li>Production log monitoring for Sprint 47</li>
+      </ul>
+      <div class="tag-row" style="margin-top:6px;"><span class="tag tag-plan">◌ Planned</span></div>
+      <ul class="slist">
+        <li>Update weight ranges for Puppy &amp; Kitten Weight Check tools</li>
+        <li>QA verification for in-sprint user stories</li>
+      </ul>
+    </div>
+
+  </div><!-- /grid -->
+
+  <div class="slide-footer">
+    <span>Source: Azure DevOps · MarsDevTeam · Digital Health</span>
+    <span>GD Sprint 47 &nbsp;|&nbsp; 111 work items &nbsp;|&nbsp; June 22, 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
