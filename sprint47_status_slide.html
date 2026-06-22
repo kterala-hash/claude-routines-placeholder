@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Sprint 47 Status Slide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1280px;height:720px;overflow:hidden;font-family:'Segoe UI',Arial,sans-serif;background:#0d2b45}
+.slide{width:1280px;height:720px;display:flex;flex-direction:column;background:linear-gradient(160deg,#0d2b45 0%,#1a3f5c 100%)}
+.slide-hdr{padding:14px 32px 10px;border-bottom:2px solid #1e5580;display:flex;justify-content:space-between;align-items:center}
+.slide-hdr h1{font-size:18px;font-weight:700;color:#fff;letter-spacing:.3px}
+.slide-hdr .sub{font-size:11px;color:#8ab4cc}
+.slide-body{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:0;overflow:hidden}
+.col{padding:8px 10px;border-right:1px solid #1c3f5a;overflow:hidden}
+.col:last-child{border-right:none}
+.col-hdr{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#5ab4d9;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #1c4060}
+.area-name{font-size:10.5px;font-weight:700;color:#d0e8f4;margin:5px 0 2px}
+.area-name:first-child{margin-top:0}
+ul{list-style:none;margin-bottom:2px}
+li{font-size:9px;line-height:1.4;color:#b0cfe0;padding-left:9px;position:relative;margin-bottom:1px}
+li::before{content:"\2022";position:absolute;left:0;color:#5ab4d9}
+li.c{color:#7dd9a0}li.c::before{color:#7dd9a0}
+li.q{color:#f0c96a}li.q::before{color:#f0c96a}
+li.i{color:#82c4f8}li.i::before{color:#82c4f8}
+li.p{color:#8099ae}li.p::before{color:#8099ae}
+.lbl{font-size:8px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;margin:2px 0 1px;opacity:.75}
+.lbl.c{color:#7dd9a0}.lbl.q{color:#f0c96a}.lbl.i{color:#82c4f8}.lbl.p{color:#8099ae}
+.slide-ftr{padding:5px 32px;font-size:9px;color:#4a7a9b;border-top:1px solid #1c3f5a;display:flex;justify-content:space-between}
+.legend{display:flex;gap:12px;align-items:center}
+.leg-item{display:flex;align-items:center;gap:4px;font-size:9px}
+.dot{width:8px;height:8px;border-radius:50%}
+.dc{background:#7dd9a0}.dq{background:#f0c96a}.di{background:#82c4f8}.dp{background:#8099ae}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="slide-hdr">
+    <h1>Digital Health – Weekly Status Report &nbsp;|&nbsp; GD Sprint 47 (June 9–22, 2026)</h1>
+    <div class="sub">Report Date: June 22, 2026 &nbsp;|&nbsp; GD Core Team</div>
+  </div>
+  <div class="slide-body">
+    <div class="col">
+      <div class="col-hdr">Frontend / UX</div>
+
+      <div class="area-name">ToothScan 2.0</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Resolved 25+ UI/UX bugs: photo upload, navigation, branding & layout fixes</li></ul>
+      <div class="lbl q">QA</div>
+      <ul>
+        <li class="q">Standalone user journey template</li>
+        <li class="q">Loading screen with fun facts</li>
+        <li class="q">Image resizing &amp; aspect ratio preservation</li>
+        <li class="q">Analysis response review (compressed vs uncompressed)</li>
+      </ul>
+      <div class="lbl i">In Progress</div>
+      <ul><li class="i">Integration testing support (FE/BE/QA)</li></ul>
+      <div class="lbl p">Planned</div>
+      <ul>
+        <li class="p">Preprod/Prod user journey setup</li>
+        <li class="p">Updated image upload error screens (Figma aligned)</li>
+        <li class="p">Mobile &amp; camera permission fixes</li>
+      </ul>
+
+      <div class="area-name">Kitten Weight Check</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Corrected breed names across SDK, templates &amp; history</li></ul>
+    </div>
+
+    <div class="col">
+      <div class="col-hdr">SDK &amp; Configuration</div>
+
+      <div class="area-name">Configurable Journey Navigation</div>
+      <div class="lbl c">Completed</div>
+      <ul>
+        <li class="c">Decision rules for journey navigation (FE &amp; BE)</li>
+        <li class="c">Screen lifecycle actions &amp; outcome persistence</li>
+      </ul>
+      <div class="lbl i">In Progress</div>
+      <ul><li class="i">Navigation rules &amp; view conditions schema (BE)</li></ul>
+      <div class="lbl p">Planned</div>
+      <ul>
+        <li class="p">Navigation rules builder in SDK Manager (FE)</li>
+        <li class="p">Navigation rules preview &amp; simulation</li>
+        <li class="p">UX design for navigation config experience</li>
+      </ul>
+
+      <div class="area-name">Config ID Bundle Management</div>
+      <div class="lbl c">Completed</div>
+      <ul>
+        <li class="c">FE integration testing support</li>
+        <li class="c">VITE_ENV config for PreProd &amp; Prod</li>
+        <li class="c">SDK integration guide updated (stable bundle URL)</li>
+      </ul>
+      <div class="lbl i">In Progress</div>
+      <ul>
+        <li class="i">Config-driven backend URL resolution (Check &amp; Care SDKs)</li>
+        <li class="i">History, Integration, Create flows UI/UX improvements</li>
+      </ul>
+
+      <div class="area-name">SDK Version Workflow</div>
+      <div class="lbl i">In Progress</div>
+      <ul><li class="i">Save/Delete/Publish behavior refinement for Versions &amp; Variants</li></ul>
+    </div>
+
+    <div class="col">
+      <div class="col-hdr">Backend &amp; Infrastructure</div>
+
+      <div class="area-name">Cat WeightScan</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Cat breed list implementation discovery</li></ul>
+      <div class="lbl q">QA</div>
+      <ul>
+        <li class="q">Cat Body Condition Score result screen</li>
+        <li class="q">Breed list with coat length attributes</li>
+      </ul>
+      <div class="lbl i">In Progress</div>
+      <ul>
+        <li class="i">Backend services &amp; additional properties for Cat WeightScan API</li>
+        <li class="i">CAS changes &amp; conditional screen rendering</li>
+      </ul>
+
+      <div class="area-name">Monorepo Migration</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">SDK cache &amp; localized error-message cache enabled</li></ul>
+      <div class="lbl i">In Progress</div>
+      <ul>
+        <li class="i">Config-driven backend URL resolution (dev phase)</li>
+        <li class="i">Cosmos DB data replication to statistical container</li>
+      </ul>
+
+      <div class="area-name">Redis Cache</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Increased Redis connection &amp; operation timeouts</li></ul>
+
+      <div class="area-name">Production Monitoring</div>
+      <div class="lbl i">In Progress</div>
+      <ul><li class="i">Sprint 47 production log monitoring &amp; analysis</li></ul>
+    </div>
+
+    <div class="col">
+      <div class="col-hdr">QA, DevOps &amp; Misc</div>
+
+      <div class="area-name">Feline Immunity Check</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Template updated with science page URL</li></ul>
+      <div class="lbl q">QA</div>
+      <ul><li class="q">Template refresh with trimmed content</li></ul>
+
+      <div class="area-name">Einstein Bot Integration</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">Einstein Bot changes promoted to production</li></ul>
+
+      <div class="area-name">Transition to SDK Mgr Config Module</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">IAMS Poopscan &amp; Puppy Weight Check configured for Config ID bundles</li></ul>
+
+      <div class="area-name">DevOps</div>
+      <div class="lbl c">Completed</div>
+      <ul>
+        <li class="c">Domain entries added to CAPI</li>
+        <li class="c">Local Docker infra for MongoDB &amp; CosmosDB</li>
+      </ul>
+      <div class="lbl i">In Progress</div>
+      <ul><li class="i">PAT renewal, Azure Function workflow, feature flags</li></ul>
+
+      <div class="area-name">SDK Manager Bugs</div>
+      <div class="lbl c">Completed</div>
+      <ul><li class="c">6 SDK Manager bugs resolved (Config ID, bundle catalog, release notes)</li></ul>
+      <div class="lbl i">In Progress</div>
+      <ul>
+        <li class="i">Autocomplete error after CSV breed list upload</li>
+        <li class="i">Localization for Results string in download report</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-ftr">
+    <div class="legend">
+      <div class="leg-item"><div class="dot dc"></div>Completed</div>
+      <div class="leg-item"><div class="dot dq"></div>QA / Testing</div>
+      <div class="leg-item"><div class="dot di"></div>In Progress</div>
+      <div class="leg-item"><div class="dot dp"></div>Planned</div>
+    </div>
+    <span>Project: Digital Health &nbsp;|&nbsp; Generated: June 22, 2026</span>
+  </div>
+</div>
+</body>
+</html>
