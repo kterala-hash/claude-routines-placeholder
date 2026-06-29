@@ -11,126 +11,151 @@
       height: 720px;
       overflow: hidden;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #0a1628;
-      color: #fff;
+      background: #ffffff;
+      color: #1a1a1a;
     }
     .slide {
       width: 1280px;
       height: 720px;
       display: grid;
-      grid-template-rows: 80px 1fr 36px;
-      grid-template-columns: 1fr;
-      overflow: hidden;
+      grid-template-rows: 64px 1fr 30px;
     }
 
-    /* ---- HEADER ---- */
+    /* ── HEADER ── */
     .slide-header {
-      background: linear-gradient(90deg, #0a1628 0%, #1565C0 60%, #1976D2 100%);
+      background: #1565C0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
+      padding: 0 24px;
       border-bottom: 3px solid #42A5F5;
     }
-    .header-left h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.3px; }
-    .header-left .sub { font-size: 13px; color: #90CAF9; margin-top: 2px; }
-    .header-right {
-      text-align: right;
-      font-size: 12px;
-      color: #90CAF9;
-    }
+    .header-left h1 { font-size: 18px; font-weight: 700; color: #fff; letter-spacing: 0.2px; }
+    .header-left .sub { font-size: 11px; color: #BBDEFB; margin-top: 2px; }
     .header-right .sprint-pill {
       display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
       border-radius: 20px;
-      padding: 4px 14px;
-      font-size: 12px;
+      padding: 3px 12px;
+      font-size: 11px;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 4px;
     }
 
-    /* ---- BODY GRID ---- */
+    /* ── BODY ── */
     .slide-body {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      padding: 12px 16px 8px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
       overflow: hidden;
+      background: #f8f9fb;
     }
 
-    /* ---- STATUS COLUMNS ---- */
-    .status-col {
+    /* ── COLUMNS ── */
+    .col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+      padding: 8px 7px;
+      border-right: 1px solid #e0e4ea;
+      overflow: hidden;
     }
-    .col-header {
-      text-align: center;
-      padding: 5px 8px;
-      border-radius: 6px;
-      font-size: 11px;
+    .col:last-child { border-right: none; }
+    .col-title {
+      font-size: 9px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-    }
-    .col-completed { background: #1B5E20; color: #A5D6A7; }
-    .col-qa        { background: #F57F17; color: #FFF9C4; }
-    .col-inprog    { background: #0D47A1; color: #BBDEFB; }
-    .col-planned   { background: #4A148C; color: #E1BEE7; }
-    .col-bugs      { background: #B71C1C; color: #FFCDD2; }
-
-    /* ---- CARDS ---- */
-    .card {
-      border-radius: 6px;
-      padding: 7px 9px;
-      font-size: 10.5px;
-      line-height: 1.4;
-      border-left: 3px solid transparent;
-    }
-    .card .tag {
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      opacity: 0.75;
-      display: block;
+      letter-spacing: 1px;
+      color: #546E7A;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #e0e4ea;
       margin-bottom: 2px;
     }
-    .card .item { font-size: 10.5px; }
 
-    .card-completed { background: #1a3a1a; border-left-color: #4CAF50; color: #C8E6C9; }
-    .card-qa        { background: #3a2a00; border-left-color: #FFC107; color: #FFF9C4; }
-    .card-inprog    { background: #0d1f3a; border-left-color: #2196F3; color: #BBDEFB; }
-    .card-planned   { background: #1e0a3a; border-left-color: #9C27B0; color: #E1BEE7; }
-    .card-bug       { background: #3a0a0a; border-left-color: #F44336; color: #FFCDD2; }
+    /* ── FEATURE CARD ── */
+    .feature-card {
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid #e0e4ea;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .feature-header {
+      padding: 5px 9px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.3;
+    }
+    .fh-nav      { background: #1565C0; }
+    .fh-tooth    { background: #6A1B9A; }
+    .fh-subbrand { background: #0277BD; }
+    .fh-config   { background: #283593; }
+    .fh-feedback { background: #00695C; }
+    .fh-mono     { background: #4527A0; }
+    .fh-live     { background: #1B5E20; }
+    .fh-version  { background: #E65100; }
+    .fh-platform { background: #37474F; }
+    .fh-template { background: #880E4F; }
+    .fh-devops   { background: #BF360C; }
+    .fh-logs     { background: #4E342E; }
+    .fh-misc     { background: #424242; }
 
-    /* ---- FOOTER ---- */
+    .feature-body { padding: 5px 8px 6px; }
+
+    /* ── STATUS GROUP ── */
+    .sg { margin-bottom: 5px; }
+    .sg:last-child { margin-bottom: 0; }
+    .sg-label {
+      display: inline-block;
+      font-size: 8px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      margin-bottom: 3px;
+    }
+    .sl-done { background: #E8F5E9; color: #1B5E20; }
+    .sl-qa   { background: #FFF8E1; color: #F57F17; }
+    .sl-ip   { background: #E3F2FD; color: #0D47A1; }
+    .sl-pl   { background: #F3E5F5; color: #6A1B9A; }
+
+    ul.bullets { list-style: none; padding: 0; margin: 0; }
+    ul.bullets li {
+      font-size: 9.5px;
+      color: #333;
+      padding: 1.5px 0 1.5px 10px;
+      position: relative;
+      line-height: 1.4;
+    }
+    ul.bullets li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: #90A4AE;
+      font-size: 13px;
+      top: -1px;
+    }
+
+    /* ── FOOTER ── */
     .slide-footer {
-      background: #0d1f38;
-      border-top: 1px solid #1a3a5c;
+      background: #ECEFF1;
+      border-top: 1px solid #CFD8DC;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
-      font-size: 10px;
-      color: #546E7A;
+      padding: 0 16px;
+      font-size: 9px;
+      color: #78909C;
     }
-    .footer-counts {
-      display: flex;
-      gap: 16px;
-    }
-    .fc { display: flex; align-items: center; gap: 5px; }
-    .fc-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .fc-done  { background: #4CAF50; }
-    .fc-qa    { background: #FFC107; }
-    .fc-ip    { background: #2196F3; }
-    .fc-pl    { background: #9C27B0; }
+    .footer-counts { display: flex; gap: 14px; align-items: center; }
+    .fc { display: flex; align-items: center; gap: 4px; font-size: 9px; }
+    .fc-dot { width: 7px; height: 7px; border-radius: 50%; }
   </style>
 </head>
 <body>
@@ -139,113 +164,303 @@
   <!-- HEADER -->
   <div class="slide-header">
     <div class="header-left">
+      <div class="sub">Project: Digital Health &nbsp;·&nbsp; GD Core Team &nbsp;·&nbsp; Report Date: June 29, 2026</div>
       <h1>🐾 Digital Health Platform – Weekly Status Report</h1>
-      <div class="sub">GD Core Team &nbsp;·&nbsp; Project: Digital Health &nbsp;·&nbsp; Report Date: June 29, 2026</div>
     </div>
     <div class="header-right">
-      <div class="sprint-pill">🏃 GD Sprint 48</div>
-      <div>Jun 23 – Jul 6, 2026</div>
+      <div class="sprint-pill">GD Sprint 48 &nbsp;·&nbsp; Jun 23 – Jul 6, 2026</div>
     </div>
   </div>
 
-  <!-- BODY -->
+  <!-- BODY: 4 columns, grouped by feature -->
   <div class="slide-body">
 
-    <!-- COMPLETED -->
-    <div class="status-col">
-      <div class="col-header col-completed">✓ Completed <span style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;">9</span></div>
+    <!-- ═══ COLUMN 1 ═══ -->
+    <div class="col">
+      <div class="col-title">SDK Manager · Navigation &amp; Branding</div>
 
-      <div class="card card-completed"><span class="tag">Navigation</span><span class="item">Navigation Rules save validation delivered</span></div>
-      <div class="card card-completed"><span class="tag">Navigation</span><span class="item">Navigation Rules &amp; View Conditions schema completed</span></div>
-      <div class="card card-completed"><span class="tag">ToothScan 2.0</span><span class="item">Fixed content on welcome page &amp; fun fact page</span></div>
-      <div class="card card-completed"><span class="tag">ToothScan 2.0</span><span class="item">Resolved spacing issues in questionnaire</span></div>
-      <div class="card card-completed"><span class="tag">ToothScan 2.0</span><span class="item">Restored back button on Additional Resources page</span></div>
-      <div class="card card-completed"><span class="tag">ToothScan 2.0</span><span class="item">Resolved mobile Stage testing observations</span></div>
-      <div class="card card-completed"><span class="tag">SDK Manager</span><span class="item">Variant Configurations view (backend) delivered</span></div>
-      <div class="card card-completed"><span class="tag">Navigation</span><span class="item">Navigation rules schema implementation task closed</span></div>
-    </div>
+      <!-- Configurable Journey Navigation -->
+      <div class="feature-card">
+        <div class="feature-header fh-nav">🧭 Configurable Journey Navigation</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-done">✓ Completed</div>
+            <ul class="bullets">
+              <li>Navigation Rules save validation delivered</li>
+              <li>Navigation Rules &amp; View Conditions schema completed</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>UX design for navigation rules configuration in SDK Manager</li>
+              <li>Screen lifecycle actions in Screen Builder (frontend)</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Screen lifecycle actions execution in SDK runtime</li>
+              <li>Idempotent outcome persistence for lifecycle actions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <!-- IN QA -->
-    <div class="status-col">
-      <div class="col-header col-qa">⚙ In QA <span style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;">4</span></div>
+      <!-- Edit Sub Brand -->
+      <div class="feature-card">
+        <div class="feature-header fh-subbrand">🏷️ Edit Sub Brand</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Sub-brand logo override from parent brand</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Sub-brand creation workflow bug resolution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-      <div class="card card-qa"><span class="tag">ToothScan 2.0</span><span class="item">Config ID stored in Outcomes DB (tool update + CAS + app context)</span></div>
-      <div class="card card-qa"><span class="tag">ToothScan 2.0</span><span class="item">ToothScan tool updated to save Config ID</span></div>
-      <div class="card card-qa"><span class="tag">ToothScan 2.0</span><span class="item">CAS updated to persist Config ID in outcomes</span></div>
-      <div class="card card-qa"><span class="tag">ToothScan 2.0</span><span class="item">App context updated with Config ID across all tools</span></div>
-    </div>
+      <!-- Config ID Bundle Management -->
+      <div class="feature-card">
+        <div class="feature-header fh-config">🔧 Config ID Bundle Management</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Configuration history integration design</li>
+              <li>Configuration variants relationship design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <!-- IN PROGRESS -->
-    <div class="status-col">
-      <div class="col-header col-inprog">⟳ In Progress <span style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;">22</span></div>
+      <!-- SDK Version Workflow -->
+      <div class="feature-card">
+        <div class="feature-header fh-version">🔄 SDK Version Workflow Enhancements</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Save/Delete/Lifecycle consistency design for SDK Versions &amp; Variants</li>
+              <li>Safe &amp; consistent lifecycle implementation (frontend &amp; backend)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-      <div class="card card-inprog"><span class="tag">Navigation</span><span class="item">UX design for navigation rules in SDK Manager</span></div>
-      <div class="card card-inprog"><span class="tag">Navigation</span><span class="item">Screen lifecycle actions in Screen Builder (FE)</span></div>
-      <div class="card card-inprog"><span class="tag">ToothScan 2.0</span><span class="item">User Journey deployment to Preprod &amp; Prod</span></div>
-      <div class="card card-inprog"><span class="tag">ToothScan 2.0</span><span class="item">Logger error resolution (backend)</span></div>
-      <div class="card card-inprog"><span class="tag">Edit Sub Brand</span><span class="item">Sub-brand parent logo override (frontend)</span></div>
-      <div class="card card-inprog"><span class="tag">Config ID Mgmt</span><span class="item">Configuration history integration design</span></div>
-      <div class="card card-inprog"><span class="tag">Config ID Mgmt</span><span class="item">Config variants relationship design</span></div>
-      <div class="card card-inprog"><span class="tag">Feedback</span><span class="item">Feedback submission API backend implementation</span></div>
-      <div class="card card-inprog"><span class="tag">Live Tools</span><span class="item">Onboarding all live tools to SDK Manager (7 tools)</span></div>
-      <div class="card card-inprog"><span class="tag">SDK Versions</span><span class="item">Save/Delete/Lifecycle consistency design &amp; implementation</span></div>
-      <div class="card card-inprog"><span class="tag">DevOps</span><span class="item">Sprint 48 CI/CD workflow maintenance &amp; fixes</span></div>
-      <div class="card card-inprog"><span class="tag">DevOps</span><span class="item">Azure infrastructure provisioning automation discovery</span></div>
-      <div class="card card-inprog"><span class="tag">Prod Monitoring</span><span class="item">Sprint 48 production log monitoring</span></div>
-      <div class="card card-inprog"><span class="tag">Config ID</span><span class="item">Config ID in SDK app context across API requests</span></div>
-      <div class="card card-inprog"><span class="tag">SDK Manager</span><span class="item">Environment banner in SDK Manager header</span></div>
-      <div class="card card-inprog"><span class="tag">SDK Manager</span><span class="item">Bundle validation alert for assigned bundle deletion</span></div>
-    </div>
+    </div><!-- /col 1 -->
 
-    <!-- PLANNED -->
-    <div class="status-col">
-      <div class="col-header col-planned">◷ Planned <span style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;">24</span></div>
+    <!-- ═══ COLUMN 2 ═══ -->
+    <div class="col">
+      <div class="col-title">ToothScan 2.0 – Guided Photo Capture &amp; Analysis</div>
 
-      <div class="card card-planned"><span class="tag">Navigation</span><span class="item">Screen lifecycle actions execution in SDK runtime</span></div>
-      <div class="card card-planned"><span class="tag">Navigation</span><span class="item">Idempotent outcome persistence for lifecycle actions</span></div>
-      <div class="card card-planned"><span class="tag">ToothScan 2.0</span><span class="item">Image upload error screen redesign (new Figma)</span></div>
-      <div class="card card-planned"><span class="tag">ToothScan 2.0</span><span class="item">Validation messages fix on preview screen</span></div>
-      <div class="card card-planned"><span class="tag">ToothScan 2.0</span><span class="item">Image Not Found error handling on submission</span></div>
-      <div class="card card-planned"><span class="tag">Feedback</span><span class="item">Feedback Form frontend component (FE + SDK)</span></div>
-      <div class="card card-planned"><span class="tag">Feedback</span><span class="item">Feedback Form API integration in SDK</span></div>
-      <div class="card card-planned"><span class="tag">Feedback</span><span class="item">Feedback analytics + frequency/TTL config</span></div>
-      <div class="card card-planned"><span class="tag">Monorepo</span><span class="item">Config-driven backend URL resolution (Check &amp; Care SDK)</span></div>
-      <div class="card card-planned"><span class="tag">Monorepo</span><span class="item">Datadog monitoring migration + shared library alignment</span></div>
-      <div class="card card-planned"><span class="tag">Platform</span><span class="item">Reusable large text content component</span></div>
-      <div class="card card-planned"><span class="tag">SDK Manager</span><span class="item">SDK Version Template listing by species &amp; tool</span></div>
-      <div class="card card-planned"><span class="tag">Templates</span><span class="item">Template creation from existing SDK Version</span></div>
-      <div class="card card-planned"><span class="tag">Weight Tools</span><span class="item">Weight range updates for PWC &amp; KWC tools</span></div>
-      <div class="card card-planned"><span class="tag">SDK</span><span class="item">Demo app Config ID–based SDK launch support</span></div>
-      <div class="card card-planned"><span class="tag">Mono-Repo</span><span class="item">Backend job refactoring into workers structure</span></div>
-    </div>
+      <div class="feature-card">
+        <div class="feature-header fh-tooth">🦷 ToothScan 2.0 – Pet Parent Experience</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-done">✓ Completed</div>
+            <ul class="bullets">
+              <li>Fixed content on welcome page &amp; fun fact page</li>
+              <li>Resolved spacing issues in user questionnaire</li>
+              <li>Restored back button on Additional Resources page</li>
+              <li>Resolved mobile Stage testing observations</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-qa">⚙ In QA</div>
+            <ul class="bullets">
+              <li>Config ID storage in Outcomes DB (ToothScan tool update)</li>
+              <li>CAS updated to persist Config ID in outcomes</li>
+              <li>App context updated with Config ID across all tools</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>User Journey deployment to Preprod &amp; Production environments</li>
+              <li>Backend logger error resolution in ToothScan service</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Updated image upload error screens (new Figma designs)</li>
+              <li>Validation messages display fix on preview screen</li>
+              <li>Image Not Found error handling on user submission</li>
+              <li>Clickable option display correction on preview screen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    <!-- BUGS -->
-    <div class="status-col">
-      <div class="col-header col-bugs">🐛 Active Bugs <span style="background:rgba(255,255,255,0.2);border-radius:10px;padding:1px 7px;">8</span></div>
+    </div><!-- /col 2 -->
 
-      <div class="card card-bug"><span class="tag">SDK Manager</span><span class="item">Bundle Draft status incorrectly shown (In Progress)</span></div>
-      <div class="card card-bug"><span class="tag">SDK Manager</span><span class="item">Configuration history version not updating</span></div>
-      <div class="card card-bug"><span class="tag">Edit Sub Brand</span><span class="item">Issues while creating sub brand in SDK Manager</span></div>
-      <div class="card card-bug"><span class="tag">Anicura SDK</span><span class="item">Calendar popup and weekday names broken</span></div>
-      <div class="card card-bug"><span class="tag">ToothScan 2.0</span><span class="item">Clickable option shown on preview screen</span></div>
-      <div class="card card-bug"><span class="tag">General</span><span class="item">Analysis API submission results performance issue</span></div>
-      <div class="card card-bug"><span class="tag">General</span><span class="item">Download Results container size inconsistency</span></div>
-      <div class="card card-bug"><span class="tag">ToothScan 2.0</span><span class="item">Preview screen image stretching on upload</span></div>
-    </div>
+    <!-- ═══ COLUMN 3 ═══ -->
+    <div class="col">
+      <div class="col-title">Feedback, Migration &amp; Platform</div>
 
-  </div>
+      <!-- Feedback Capture -->
+      <div class="feature-card">
+        <div class="feature-header fh-feedback">💬 Feedback Capture – All Tools</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Feedback submission API backend implementation</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Feedback Form frontend component (Drag &amp; Drop, Macro, Preview)</li>
+              <li>Feedback Form API integration in SDK</li>
+              <li>Feedback analytics integration</li>
+              <li>Feedback form frequency &amp; TTL settings in SDK Manager</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monorepo Migration -->
+      <div class="feature-card">
+        <div class="feature-header fh-mono">🗄️ Monorepo Migration – Backend Services</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Configuration-driven backend URL resolution (Check &amp; Care SDK)</li>
+              <li>Datadog monitoring migration &amp; shared library alignment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Tools to SDK Manager -->
+      <div class="feature-card">
+        <div class="feature-header fh-live">🚀 Transition Live Tools → SDK Manager</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Onboarding 7 live tools to SDK Manager using dedicated Config IDs</li>
+              <li>(Puppy Weight, Kitten Weight, ToothCheck, ToothScan, PoopScan, Dermascan, Pawscan)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Stability -->
+      <div class="feature-card">
+        <div class="feature-header fh-platform">⚡ Platform Stability &amp; Modernization</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Reusable large text content component for Drag &amp; Drop builder</li>
+              <li>SDK Version Template listing by species &amp; tool</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Template Creation -->
+      <div class="feature-card">
+        <div class="feature-header fh-template">📄 Template Creation from SDK Version</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Template creation from existing SDK Version in SDK Manager</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /col 3 -->
+
+    <!-- ═══ COLUMN 4 ═══ -->
+    <div class="col">
+      <div class="col-title">DevOps, Monitoring &amp; Cross-Cutting</div>
+
+      <!-- DevOps -->
+      <div class="feature-card">
+        <div class="feature-header fh-devops">⚙️ DevOps – Apply DevOps Practices</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Sprint 48 CI/CD workflow maintenance &amp; fixes</li>
+              <li>Azure infrastructure provisioning automation discovery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Production Logs -->
+      <div class="feature-card">
+        <div class="feature-header fh-logs">📊 Daily Production Logs Monitoring</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Ongoing production log monitoring &amp; alerting for Sprint 48</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Misc -->
+      <div class="feature-card">
+        <div class="feature-header fh-misc">📌 Miscellaneous</div>
+        <div class="feature-body">
+          <div class="sg">
+            <div class="sg-label sl-done">✓ Completed</div>
+            <ul class="bullets">
+              <li>SDK Manager Variant Configurations view (backend) delivered</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-ip">⟳ In Progress</div>
+            <ul class="bullets">
+              <li>Sprint 48 QA: integration testing &amp; GA tag verification (ToothScan 2.0)</li>
+              <li>Config ID integration in SDK app context across API requests</li>
+              <li>Environment banner in SDK Manager header (Dev/Stage/PreProd/Prod)</li>
+              <li>Bundle validation alert when deleting assigned bundles</li>
+              <li>Calendar UI fix for Anicura SDK date entry</li>
+            </ul>
+          </div>
+          <div class="sg">
+            <div class="sg-label sl-pl">◷ Planned</div>
+            <ul class="bullets">
+              <li>Weight range updates for Puppy &amp; Kitten Weight Check tools</li>
+              <li>Analysis API &amp; submission results performance improvement</li>
+              <li>Download Results container size consistency fix</li>
+              <li>Monorepo backend job refactoring into workers structure</li>
+              <li>Demo application Config ID–based SDK launch support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /col 4 -->
+
+  </div><!-- /slide-body -->
 
   <!-- FOOTER -->
   <div class="slide-footer">
-    <div>Digital Health Platform · GD Core Team · GD Sprint 48 · Jun 23 – Jul 6, 2026</div>
+    <div>Digital Health Platform · GD Core Team · GD Sprint 48 · Jun 23 – Jul 6, 2026 · Report Date: June 29, 2026</div>
     <div class="footer-counts">
-      <div class="fc"><div class="fc-dot fc-done"></div> 9 Completed</div>
-      <div class="fc"><div class="fc-dot fc-qa"></div> 4 In QA</div>
-      <div class="fc"><div class="fc-dot fc-ip"></div> 22 In Progress</div>
-      <div class="fc"><div class="fc-dot fc-pl"></div> 24 Planned</div>
-      <div class="fc"><div class="fc-dot" style="background:#F44336;"></div> 8 Active Bugs</div>
+      <div class="fc"><div class="fc-dot" style="background:#2E7D32;"></div> 9 Completed</div>
+      <div class="fc"><div class="fc-dot" style="background:#F9A825;"></div> 4 In QA</div>
+      <div class="fc"><div class="fc-dot" style="background:#1565C0;"></div> 22 In Progress</div>
+      <div class="fc"><div class="fc-dot" style="background:#7B1FA2;"></div> 24 Planned</div>
     </div>
-    <div>Report Date: June 29, 2026</div>
   </div>
 
 </div>
