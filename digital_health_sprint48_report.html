@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Health – Weekly Status Report | Sprint 48</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #0f172a; }
+  .page { max-width: 960px; margin: 0 auto; padding: 24px; }
+  
+  .report-header { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0369a1 100%); color: white; padding: 32px 36px; border-radius: 16px; margin-bottom: 24px; }
+  .report-header h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+  .report-header .subtitle { font-size: 14px; opacity: 0.8; margin-top: 6px; }
+  .report-header .sprint-tag { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-top: 10px; }
+  
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .summary-card { background: white; border-radius: 12px; padding: 16px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid; }
+  .summary-card .count { font-size: 32px; font-weight: 800; }
+  .summary-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; margin-top: 4px; font-weight: 600; }
+  
+  .section-card { background: white; border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+  .epic-label { }
+  .section-header { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0; }
+  
+  .state-section ul { list-style-type: none; padding-left: 0; }
+  .state-section ul li::before { content: "→ "; color: #94a3b8; }
+  
+  .footer { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+  
+  @media print {
+    body { background: white; }
+    .page { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="report-header">
+    <h1>Digital Health – Weekly Status Report</h1>
+    <div class="subtitle">Mars Petcare Digital Health Platform &nbsp;|&nbsp; Project: Digital Health</div>
+    <div class="sprint-tag">Sprint 48 &nbsp;·&nbsp; Week of June 23–29, 2026</div>
+  </div>
+  
+  <div class="summary-grid">
+    <div class="summary-card" style="border-top-color: #22c55e;">
+      <div class="count" style="color:#22c55e;">11</div>
+      <div class="label">Completed</div>
+    </div>
+    <div class="summary-card" style="border-top-color: #f59e0b;">
+      <div class="count" style="color:#f59e0b;">4</div>
+      <div class="label">In QA</div>
+    </div>
+    <div class="summary-card" style="border-top-color: #3b82f6;">
+      <div class="count" style="color:#3b82f6;">28</div>
+      <div class="label">In Progress</div>
+    </div>
+    <div class="summary-card" style="border-top-color: #8b5cf6;">
+      <div class="count" style="color:#8b5cf6;">37</div>
+      <div class="label">Planned</div>
+    </div>
+  </div>
+  
+  
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">Monorepo Migration</div>
+        <div class="section-header">
+            Monorepo Migration for Backend Services<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Enable Configuration-Driven Backend URL Resolution for Check & Care SDKs - QA</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Datadog Monitoring Migration + Localization + Shared Library Alignment</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Config ID based bundle Management<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configuration History, Integration</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configurations Variants Relations</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Configurable Journey Navigation<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Navigation Rules Save Validation</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Implement Navigation Rules and view conditions Schema</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>navigation rules and view condition schema changes</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>UX Design: SDK Manager Configuration Experience for Navigation Rules, View Conditions, and Screen Lifecycle Actions</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configure Screen Lifecycle Actions in Screen Builder</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Execute Screen Lifecycle Actions in SDK Runtime</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Idempotent Outcome Persistence for Lifecycle Actions</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Create SDK Version Workflow Enhancements<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Consistent Save / Delete / Lifecycle for Versions & Variants</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Edit Sub Brand<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Allow Sub-Brand to Override Parent Brand Logo</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Issues while creating sub brand</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Platform Stability and Performance Modernization<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Reusable content component for Large Text in D&D Components</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Template Creation from SDK Version in SDK Manager<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Create Template from Existing SDK Version</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">SDK Manager Enhancements</div>
+        <div class="section-header">
+            Transition Live Tools to SDK Manager Configuration Module for Config ID–Based Bundle Management<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard Live Tools from DHT site to SDK Manager Configuration Module Using Dedicated Configuration Pages</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard Puppy Weight Check to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard Kitten Weight Check to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard ToothCheck to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard ToothScan to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard PoopScan to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard Dermascan to SDK Manager Configuration Module</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Onboard Pawscan to SDK Manager Configuration Module</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        <div class="epic-label" style="font-size:11px; color:#64748b; font-weight:500; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;">UI/UX Optimization & Conversion Growth Initiative Across Digital Health Tools and Brands</div>
+        <div class="section-header">
+            Feedback Capture for Journey Exit and Completion (All Tools)<span style="background:#0ea5e9; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Feature</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>submit feedback API implementation</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Implement Feedback Form Component  (D&D, Macro, Preview)</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Feedback Form API Integration</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Analytics Changes – Add Feedback Form Analytics to Existing Tools</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>SDK Settings – Add Feedback Form Frequency & TTL Configuration Support</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Apply DevOps Practices<span style="background:#8b5cf6; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Epic</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Fix: failing workflow</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>DevOps activities for</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Assembly and Operations - SDKM and SDK<span style="background:#8b5cf6; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Epic</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configure Max integration for Pedigree_Toothscan 1.1 for Thailand.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update feedback Content for Poopscan_Royal Canin RC for Thailand</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Create SDK & Sub Brand  for Poopscan_Royal Canin_Malaysia(en-AU)</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Create SDK & Sub Brand  for Poopscan_Royal Canin_Philippines(en-AU)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Daily Production logs monitoring<span style="background:#8b5cf6; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Epic</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Production Log Monitoring</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Daily Log Monitoring</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Phase 1 - Enhancements to Puppy Weight Check<span style="background:#8b5cf6; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Epic</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Feedback Items of Puppy WeightCheck SDK</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            ToothScan_2.0 – Pet Parent Experience with Guided Photo Capture and Enhanced Analysis<span style="background:#8b5cf6; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Epic</span>
+        </div>
+        
+        <div class="state-section" style="background:#fffbeb; border-left: 4px solid #f59e0b; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#f59e0b; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">QA</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Store Config ID in Outcomes DB</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update Toothscan tool to save configId</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update CAS to save configId</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update appContext with configId in all the tools to support schema stiching</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Create ToothScan_2.0 User Journey - Preprod and Prod</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Digital Health<span style="background:#64748b; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Misc</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Content needs to remove from last paragraph of welcome page</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Message needs to be updated for fun fact page</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>space needs to add in question</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Back button should be present on Additional Resources page</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>When we delete any assigned Bundle no alert is shown</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>When we change the status to Draft it should not show in dropdown.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Calendar doesn't pop up to enter the date & Weekday Names are getting overlapped on the calendar screen.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>QA activities for the</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Discovery – Infrastructure Provisioning Automation for Mars Azure Resources</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Safe & consistent Save / Delete / Lifecycle for Versions & Variants</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Display Environment Banner in Header (Dev, Stage, PreProd & Prod)</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>The welcome screen in the mobile app is getting stuck after entering the password for the DHA tools.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>The camera screen buttons need to be redesigned or a new approach should be considered for better usability.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Error state messages need to be handled properly on the preview screens.</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Analysis API and the Submission results are taking more then expected time</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Container size is not constant in Download Results</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configure Max integration for Toothscan 1.1 for Pedigree Philippines</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Logger error</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>In Configuration history the Version is not changing when changed in Bundle Version</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Refactor jobs into workers folder and standardize job documentation</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Perform Integration testing on Toothscan 2.0 and report bugs</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Validation messages from preview screen are not showing properly.</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Image Not found error message is showing when user try submitted the image</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Verify the GA Tags for the Toothscan 2.0 User Story - 1397035</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Enable Configuration-Driven Backend URL Resolution for Check & Care SDKs - Dev</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Implement SDK Version Template Listing by Species & Tool</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Valid option is showing as clickable on preview screen</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Verify Image upload scenarios for the Toothscan</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Digital Health\Assembly and Operations Team<span style="background:#64748b; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Misc</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Configure Max integration for Pedigree Toothscan 1.1 for Thailand</li><li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Create a SDK Version, Variant & Brand for Poopscan_France(fr-FR)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Digital Health\Care SDK<span style="background:#64748b; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Misc</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Variant Configurations view</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update Minimum and Maximum Weight Ranges for Weight Check Tools (PWC and KWC)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Digital Health\Dog\Scan Tools\ToothScan_2.0<span style="background:#64748b; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Misc</span>
+        </div>
+        
+        <div class="state-section" style="background:#f0fdf4; border-left: 4px solid #22c55e; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#22c55e; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Completed</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Mobile observations for Toothscan 2.0</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Preview screen Images are being stretched on capturing/uploading</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Update Image Upload Error Screens to Support New Figma Designs & Longer Error Messages</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section-card">
+        
+        <div class="section-header">
+            Digital Health\SDK Manager<span style="background:#64748b; color:white; font-size:10px; padding:1px 7px; border-radius:10px; font-weight:600; margin-left:8px; vertical-align:middle;">Misc</span>
+        </div>
+        
+        <div class="state-section" style="background:#eff6ff; border-left: 4px solid #3b82f6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#3b82f6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">In Progress</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Add Config ID to App Context Across SDK API Requests</li>
+            </ul>
+        </div>
+        <div class="state-section" style="background:#faf5ff; border-left: 4px solid #8b5cf6; margin: 8px 0; padding: 10px 14px; border-radius: 0 6px 6px 0;">
+            <span class="state-badge" style="background:#8b5cf6; color:white; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px;">Planned</span>
+            <ul style="margin:6px 0 0 0; padding-left: 18px;">
+                <li style='margin:3px 0; font-size:13.5px; color:#1e293b;'>Enhance Demo Application to Support SDK Launch via Config ID</li>
+            </ul>
+        </div>
+    </div>
+  
+  <div class="footer">
+    Generated: June 29, 2026 &nbsp;|&nbsp; Digital Health – Sprint 48 &nbsp;|&nbsp; Total work items tracked: 80
+  </div>
+</div>
+</body>
+</html>
