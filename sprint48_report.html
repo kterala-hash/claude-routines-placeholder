@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Status Report – Digital Health | GD Sprint 48</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fa;
+      color: #222;
+      padding: 32px 24px;
+    }
+    .report-header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #1565C0 100%);
+      color: white;
+      border-radius: 12px;
+      padding: 32px 40px;
+      margin-bottom: 32px;
+    }
+    .report-header h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .report-header .meta { font-size: 14px; opacity: 0.85; margin-top: 8px; }
+    .report-header .sprint-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .section {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      overflow: hidden;
+    }
+    .section-header {
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-header .icon { font-size: 18px; }
+    .section-header.sdk      { background: #1565C0; }
+    .section-header.toothscan { background: #6A1B9A; }
+    .section-header.feedback  { background: #00695C; }
+    .section-header.devops    { background: #E65100; }
+    .section-header.logs      { background: #37474F; }
+    .section-header.config    { background: #283593; }
+    .section-header.mono      { background: #4527A0; }
+    .section-header.misc      { background: #424242; }
+    .section-body { padding: 16px 24px 20px; }
+    .status-group { margin-bottom: 16px; }
+    .status-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .status-label.completed { background: #E8F5E9; color: #1B5E20; border: 1px solid #A5D6A7; }
+    .status-label.qa        { background: #FFF8E1; color: #F57F17; border: 1px solid #FFE082; }
+    .status-label.inprogress{ background: #E3F2FD; color: #0D47A1; border: 1px solid #90CAF9; }
+    .status-label.planned   { background: #F3E5F5; color: #4A148C; border: 1px solid #CE93D8; }
+    ul.items { list-style: none; padding: 0; margin: 0; }
+    ul.items li {
+      padding: 5px 0 5px 18px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+      position: relative;
+      line-height: 1.5;
+    }
+    ul.items li:last-child { border-bottom: none; }
+    ul.items li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #90A4AE;
+      font-size: 12px;
+      top: 6px;
+    }
+    .parent-label {
+      font-size: 11px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 4px;
+      padding: 0 0 4px;
+      border-bottom: 1px dashed #e0e0e0;
+      margin-bottom: 10px;
+    }
+    .summary-bar {
+      display: flex;
+      gap: 16px;
+      background: white;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      flex-wrap: wrap;
+    }
+    .summary-tile {
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+      padding: 14px 10px;
+      border-radius: 8px;
+    }
+    .summary-tile .count { font-size: 30px; font-weight: 700; }
+    .summary-tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 4px; }
+    .tile-completed { background: #E8F5E9; color: #2E7D32; }
+    .tile-qa        { background: #FFF8E1; color: #F9A825; }
+    .tile-inprog    { background: #E3F2FD; color: #1565C0; }
+    .tile-planned   { background: #F3E5F5; color: #7B1FA2; }
+    .report-footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 30px;
+      padding: 16px;
+    }
+    @media print {
+      body { padding: 16px; background: white; }
+      .section { box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="report-header">
+  <h1>📋 Weekly Status Report – Digital Health Platform</h1>
+  <div class="meta">Project: <strong>Digital Health</strong> &nbsp;|&nbsp; Team: <strong>GD Core Team</strong> &nbsp;|&nbsp; Report Date: <strong>June 29, 2026</strong></div>
+  <div class="sprint-badge">🏃 GD Sprint 48 &nbsp;·&nbsp; Jun 23 – Jul 6, 2026</div>
+</div>
+
+<!-- Summary Bar -->
+<div class="summary-bar">
+  <div class="summary-tile tile-completed">
+    <div class="count">9</div>
+    <div class="label">Completed</div>
+  </div>
+  <div class="summary-tile tile-qa">
+    <div class="count">4</div>
+    <div class="label">In QA</div>
+  </div>
+  <div class="summary-tile tile-inprog">
+    <div class="count">22</div>
+    <div class="label">In Progress</div>
+  </div>
+  <div class="summary-tile tile-planned">
+    <div class="count">24</div>
+    <div class="label">Planned</div>
+  </div>
+</div>
+
+<!-- ========== CONFIGURABLE JOURNEY NAVIGATION ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">🧭</span> Configurable Journey Navigation
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Configurable Journey Navigation</div>
+    <div class="status-group">
+      <div class="status-label completed">✓ Completed</div>
+      <ul class="items">
+        <li>Navigation rules save validation implemented and delivered</li>
+        <li>Navigation rules and view conditions schema implementation completed</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>UX design for navigation rules configuration experience in SDK Manager</li>
+        <li>Screen lifecycle actions configuration in Screen Builder (frontend)</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Screen lifecycle actions execution in SDK runtime</li>
+        <li>Idempotent outcome persistence for lifecycle actions (backend/CAS)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TOOTHSCAN 2.0 ========== -->
+<div class="section">
+  <div class="section-header toothscan">
+    <span class="icon">🦷</span> ToothScan 2.0 – Pet Parent Experience
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: ToothScan 2.0 – Guided Photo Capture and Enhanced Analysis</div>
+    <div class="status-group">
+      <div class="status-label completed">✓ Completed</div>
+      <ul class="items">
+        <li>Resolved content display issues on welcome page and fun fact page</li>
+        <li>Fixed spacing and question formatting in user questionnaire</li>
+        <li>Restored back button navigation on Additional Resources page</li>
+        <li>Resolved mobile app stage testing observations</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label qa">⚙ In QA</div>
+      <ul class="items">
+        <li>Config ID storage in Outcomes database (tool update, CAS update, and app context integration)</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>ToothScan 2.0 user journey deployment to Preprod and Production environments</li>
+        <li>Logger error resolution in ToothScan backend service</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Updated image upload error screen designs to match new Figma specifications</li>
+        <li>Validation message display fix on preview screen</li>
+        <li>Image not found error handling during user submission</li>
+        <li>Clickable option display correction on preview screen</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== EDIT SUB BRAND ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">🏷️</span> Edit Sub Brand
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Edit Sub Brand</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Sub-brand logo override from parent brand logo enabled in SDK Manager</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Sub-brand creation workflow bug resolution</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONFIG ID BUNDLE MANAGEMENT ========== -->
+<div class="section">
+  <div class="section-header config">
+    <span class="icon">🔧</span> Config ID Based Bundle Management
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Config ID Based Bundle Management</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Configuration history design and integration work</li>
+        <li>Configuration variants relationship design and implementation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FEEDBACK CAPTURE ========== -->
+<div class="section">
+  <div class="section-header feedback">
+    <span class="icon">💬</span> Feedback Capture – Journey Exit and Completion
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: UI/UX Optimization &amp; Conversion Growth · Feature: Feedback Capture (All Tools)</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Feedback submission API backend implementation</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Feedback form frontend component implementation (Drag &amp; Drop, Macro, Preview)</li>
+        <li>Feedback form API integration in SDK</li>
+        <li>Feedback analytics integration across existing tracking</li>
+        <li>Feedback form frequency and TTL settings configuration in SDK Manager</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MONOREPO MIGRATION ========== -->
+<div class="section">
+  <div class="section-header mono">
+    <span class="icon">🗄️</span> Monorepo Migration for Backend Services
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: Monorepo Migration · Feature: Monorepo Migration for Backend Services</div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Configuration-driven backend URL resolution for Check &amp; Care SDK</li>
+        <li>Datadog monitoring migration, localization support, and shared library alignment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TRANSITION LIVE TOOLS ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">🚀</span> Transition Live Tools to SDK Manager Configuration Module
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Transition Live Tools to SDK Manager Configuration Module</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Onboarding all live digital health tools to SDK Manager using dedicated Config IDs (Puppy Weight Check, Kitten Weight Check, ToothCheck, ToothScan, PoopScan, Dermascan, Pawscan)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SDK VERSION WORKFLOW ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">🔄</span> SDK Version Workflow Enhancements
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: SDK Version Workflow Enhancements</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Consistent save, delete, and lifecycle management design for SDK Versions and Variants</li>
+        <li>Safe and consistent save/delete/lifecycle implementation across SDK Versions and Variants (frontend &amp; backend)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PLATFORM STABILITY ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">⚡</span> Platform Stability and Performance Modernization
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Platform Stability and Performance Modernization</div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Reusable large text content component for Drag &amp; Drop builder in SDK Manager</li>
+        <li>SDK Version Template listing by species and tool</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TEMPLATE CREATION ========== -->
+<div class="section">
+  <div class="section-header sdk">
+    <span class="icon">📄</span> Template Creation from SDK Version
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: SDK Manager Enhancements · Feature: Template Creation from SDK Version</div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Template creation from existing SDK Version in SDK Manager</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== DEVOPS ========== -->
+<div class="section">
+  <div class="section-header devops">
+    <span class="icon">⚙️</span> DevOps – Apply DevOps Practices
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: Apply DevOps Practices</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Sprint 48 DevOps activities including CI/CD workflow maintenance and fixes</li>
+        <li>Discovery for infrastructure provisioning automation for Mars Azure resources</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PRODUCTION LOGS ========== -->
+<div class="section">
+  <div class="section-header logs">
+    <span class="icon">📊</span> Daily Production Logs Monitoring
+  </div>
+  <div class="section-body">
+    <div class="parent-label">Epic: Daily Production Logs Monitoring</div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Ongoing production log monitoring and alerting activities for Sprint 48</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MISC ========== -->
+<div class="section">
+  <div class="section-header misc">
+    <span class="icon">📌</span> Miscellaneous
+  </div>
+  <div class="section-body">
+    <div class="status-group">
+      <div class="status-label completed">✓ Completed</div>
+      <ul class="items">
+        <li>SDK Manager Variant Configurations view – backend implementation delivered</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label inprogress">⟳ In Progress</div>
+      <ul class="items">
+        <li>Sprint 48 QA activities – integration testing and GA tag verification for ToothScan 2.0</li>
+        <li>Config ID integration in SDK app context across all API requests</li>
+        <li>Environment banner display in SDK Manager header (Dev, Stage, PreProd, Prod)</li>
+        <li>Bundle validation alert when deleting assigned bundles in SDK Manager</li>
+        <li>Calendar UI fix for Anicura SDK date entry on mobile</li>
+        <li>Bundle Draft status display correction in SDK Manager</li>
+      </ul>
+    </div>
+    <div class="status-group">
+      <div class="status-label planned">◷ Planned</div>
+      <ul class="items">
+        <li>Weight range configuration updates for Puppy and Kitten Weight Check tools</li>
+        <li>Analysis API and submission results performance improvement</li>
+        <li>Download Results UI container size consistency fix</li>
+        <li>Monorepo backend job refactoring into standardized workers structure</li>
+        <li>Demo application support for Config ID-based SDK launch</li>
+        <li>Configuration history version tracking display fix</li>
+        <li>Preview screen image stretching fix on capture and upload</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="report-footer">
+  Generated: June 29, 2026 &nbsp;·&nbsp; Project: Digital Health &nbsp;·&nbsp; Sprint 48 (Jun 23 – Jul 6, 2026) &nbsp;·&nbsp; GD Core Team
+</div>
+
+</body>
+</html>
