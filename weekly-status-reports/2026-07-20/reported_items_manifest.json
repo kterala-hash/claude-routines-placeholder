@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1416626,
+    "type": "User Story",
+    "state": "Development",
+    "title": "[Feedback] [FE][SDK] Feedback Form API Integration",
+    "changed": "2026-07-17T06:00:49.747Z",
+    "category": "Feedback Capture for Journey Exit and Completion (All Tools)",
+    "parent": 1389644,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1442942,
+    "type": "Bug",
+    "state": "On Hold",
+    "title": "[SDK Mgr] - In Configuration history the Version is not changing when changed in Bundle Version",
+    "changed": "2026-07-15T09:17:11.793Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "Planned"
+  },
+  {
+    "id": 1445643,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[Nav] UX Design: SDK Manager Configuration Experience for Navigation Rules, View Conditions, and Screen Lifecycle Actions",
+    "changed": "2026-07-16T07:19:52.867Z",
+    "category": "[SDK Mgr] Configurable Journey Navigation",
+    "parent": 1432222,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1455998,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[FE] [SDKM] Support Updating Parent Brand Logo",
+    "changed": "2026-07-17T09:43:15.92Z",
+    "category": "Edit Sub Brand",
+    "parent": 1308712,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1463713,
+    "type": "User Story",
+    "state": "In Review",
+    "title": "[FE] [SDK] Refactor & Modularize Download Report codebase across Check SDK - Discovery",
+    "changed": "2026-07-16T06:43:22.51Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1464221,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[FE] [SDK] Calendar doesn't pop up to enter the date & Weekday Names are getting overlapped on the calendar screen - standard fix from code",
+    "changed": "2026-07-16T10:06:19.143Z",
+    "category": "Ad Hoc Requests & Support",
+    "parent": 1144846,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1464230,
+    "type": "User Story",
+    "state": "In Review",
+    "title": "[Feedback] [FE] [SDKM] Implement Feedback Form Drag and Drop Component",
+    "changed": "2026-07-17T05:57:13.61Z",
+    "category": "Feedback Capture for Journey Exit and Completion (All Tools)",
+    "parent": 1389644,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1464293,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[BE][Edit Sub Brand] Replace & Override Logo for Brand/Sub Brand",
+    "changed": "2026-07-14T05:44:47.43Z",
+    "category": "Edit Sub Brand",
+    "parent": 1308712,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1464640,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[BE][Mono] Shared Library Alignment and Library Version Pinning",
+    "changed": "2026-07-17T10:08:10.477Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1400804,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1464645,
+    "type": "User Story",
+    "state": "Development",
+    "title": "[BE][Mono] Validate Build, Test, and Monitoring Readiness Before Release",
+    "changed": "2026-07-17T10:08:37.217Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1400804,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1464651,
+    "type": "User Story",
+    "state": "Development",
+    "title": "[BE] Migrate user image folders",
+    "changed": "2026-07-16T06:55:55.47Z",
+    "category": "Enable Reference-Based Image Processing (Replace Base64 Uploads)",
+    "parent": 1389675,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1464653,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[BE] [Mono] Optimize logging and observability for Daily Outcomes Cosmos Migration job",
+    "changed": "2026-07-14T07:38:11.56Z",
+    "category": "Original Features",
+    "parent": 1464652,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1464834,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[BE][CMAPI] Support SDK Group & SDK Type Filters in SDK Version Template APIs",
+    "changed": "2026-07-15T07:11:41.483Z",
+    "category": "Template Creation from SDK Version in SDK Manager",
+    "parent": 1308716,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1465313,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[BE] Add Feedback Additional Properties via Patches",
+    "changed": "2026-07-17T11:48:10.123Z",
+    "category": "Feedback Capture for Journey Exit and Completion (All Tools)",
+    "parent": 1389644,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1467033,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[FE][SDKM] Configure Screen Lifecycle Actions in Screen Builder - Dev testing and verification",
+    "changed": "2026-07-16T08:31:07.613Z",
+    "category": "[SDK Mgr] Create SDK Version Workflow Enhancements",
+    "parent": 1255398,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1467165,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[BE][FE][Toothscan Pro] Requirements review, discussions, analysis, solution draft planning",
+    "changed": "2026-07-17T11:24:26.92Z",
+    "category": "Toothscan Pro",
+    "parent": 1467164,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1467175,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[BE] [Weight Check] Extend dog breed chart map with extra weight classes",
+    "changed": "2026-07-16T08:59:30.93Z",
+    "category": "[Weight Check] Configurable Breed-to-Weight Class Auto-Selection & Extended Weight Class Support",
+    "parent": 1475789,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1467235,
+    "type": "User Story",
+    "state": "Development",
+    "title": "[SDK Mgr] [FE] Consistent Save / Delete / Lifecycle for Versions & Variants",
+    "changed": "2026-07-16T06:58:05.777Z",
+    "category": "[SDK Mgr] Create SDK Version Workflow Enhancements",
+    "parent": 1255398,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1467242,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[FE] [SDKM] [SDK] Support Configurable BreedSize Auto-Selection Behavior",
+    "changed": "2026-07-17T14:21:38.913Z",
+    "category": "[Weight Check] Configurable Breed-to-Weight Class Auto-Selection & Extended Weight Class Support",
+    "parent": 1475789,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1467279,
+    "type": "User Story",
+    "state": "In Review",
+    "title": "[FE] [SDK] Add Generic data-id for submit for screening button",
+    "changed": "2026-07-16T05:34:30.54Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1467287,
+    "type": "User Story",
+    "state": "Development",
+    "title": "[BE] Production Log Monitoring - Sprint-49",
+    "changed": "2026-07-17T14:49:45.107Z",
+    "category": "Daily Production logs monitoring",
+    "parent": 879935,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1468099,
+    "type": "User Story",
+    "state": "In Review",
+    "title": "[DevOps] Update Monorepo Deployment Workflow for Environment-Specific Azure Function Apps",
+    "changed": "2026-07-15T05:19:06.443Z",
+    "category": "[DevOps] MonoRepo Implementation \u2013 DevOps Enablement & Deployment Automation",
+    "parent": 1475726,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1468100,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[FE] [SDKM] Implement Copy & Paste Support for Components Within Screens & SDK Version",
+    "changed": "2026-07-16T06:43:07.4Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1468132,
+    "type": "Task",
+    "state": "IN QA",
+    "title": "Replace Logo API",
+    "changed": "2026-07-13T06:19:05.99Z",
+    "category": "Edit Sub Brand",
+    "parent": 1464293,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1468133,
+    "type": "Task",
+    "state": "IN QA",
+    "title": "Update partner schema with overrideLogo",
+    "changed": "2026-07-13T06:19:09.917Z",
+    "category": "Edit Sub Brand",
+    "parent": 1464293,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1468134,
+    "type": "Task",
+    "state": "IN QA",
+    "title": "Update fetch partner API to resolve partner inheritance based on overrideLogo option",
+    "changed": "2026-07-13T06:19:14.217Z",
+    "category": "Edit Sub Brand",
+    "parent": 1464293,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1468135,
+    "type": "Task",
+    "state": "Closed",
+    "title": "Update unit test cases",
+    "changed": "2026-07-13T06:19:18.457Z",
+    "category": "Edit Sub Brand",
+    "parent": 1464293,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1470667,
+    "type": "Task",
+    "state": "Closed",
+    "title": "Auth library sync between mono repo and multi repo",
+    "changed": "2026-07-15T08:20:41.273Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1472479,
+    "type": "User Story",
+    "state": "IN QA",
+    "title": "[BE] Store Config ID in Outcomes DB - All remaining services",
+    "changed": "2026-07-16T06:56:55.257Z",
+    "category": "ToothScan_2.0 \u2013 Pet Parent Experience with Guided Photo Capture and Enhanced Analysis",
+    "parent": 1333502,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1472765,
+    "type": "Task",
+    "state": "IN QA",
+    "title": "Update Partner Inheritance in CAPI for overrideLogo",
+    "changed": "2026-07-14T05:44:42.653Z",
+    "category": "Edit Sub Brand",
+    "parent": 1464293,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1472770,
+    "type": "Task",
+    "state": "In Review",
+    "title": "Feedback Form Drag and Drop Component",
+    "changed": "2026-07-17T05:57:04.11Z",
+    "category": "Feedback Capture for Journey Exit and Completion (All Tools)",
+    "parent": 1464230,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1472788,
+    "type": "Task",
+    "state": "Pending Review",
+    "title": "Unit tests for Feedback Form Drag and Drop Component",
+    "changed": "2026-07-17T05:57:31.58Z",
+    "category": "Feedback Capture for Journey Exit and Completion (All Tools)",
+    "parent": 1464230,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1473065,
+    "type": "Task",
+    "state": "In Progress",
+    "title": "Daily log monitoring",
+    "changed": "2026-07-13T08:33:31.937Z",
+    "category": "Daily Production logs monitoring",
+    "parent": 1467287,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1473246,
+    "type": "Bug",
+    "state": "Closed",
+    "title": "[SDK Mgr] - The dropdown of Env banner is scrolling along with the page and it should be consistent.",
+    "changed": "2026-07-17T09:34:45.233Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1473406,
+    "type": "Bug",
+    "state": "Closed",
+    "title": "[SDK Mgr] - Show the Preview & Increase character limit for Shared content fro 500 to 5000 characters",
+    "changed": "2026-07-17T09:33:22.997Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1473411,
+    "type": "Bug",
+    "state": "New",
+    "title": "[SDK Mgr] - In Environment Banner, when we switch from Dev to Stage or Stage to Pre-prod it is showing 400 bad request page",
+    "changed": "2026-07-13T11:50:17.937Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "Planned"
+  },
+  {
+    "id": 1474415,
+    "type": "Task",
+    "state": "Closed",
+    "title": "cache-lib sync with multi repo",
+    "changed": "2026-07-15T08:20:46.007Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1474614,
+    "type": "Bug",
+    "state": "Closed",
+    "title": "[SDK Mgr] - No Thumbnail Preview is shown when inherited from Parent brand logo.",
+    "changed": "2026-07-17T08:45:59.36Z",
+    "category": "Digital Health\\SDK Manager",
+    "parent": null,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1475807,
+    "type": "User Story",
+    "state": "Closed",
+    "title": "[SDKM] Add Singapore to Brand Country List",
+    "changed": "2026-07-17T08:43:20.64Z",
+    "category": "Ad Hoc Requests & Support",
+    "parent": 1144846,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1475921,
+    "type": "Task",
+    "state": "Closed",
+    "title": "error-utils sync",
+    "changed": "2026-07-15T08:20:36.21Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1476178,
+    "type": "Task",
+    "state": "IN QA",
+    "title": "Save ConfigId to outcomes DB in PWC,Poopscan,Cocoascan and Toothcheck",
+    "changed": "2026-07-16T06:56:07.623Z",
+    "category": "ToothScan_2.0 \u2013 Pet Parent Experience with Guided Photo Capture and Enhanced Analysis",
+    "parent": 1472479,
+    "norm_status": "QA"
+  },
+  {
+    "id": 1476179,
+    "type": "Task",
+    "state": "Closed",
+    "title": "Update unit test cases",
+    "changed": "2026-07-16T06:56:12.663Z",
+    "category": "ToothScan_2.0 \u2013 Pet Parent Experience with Guided Photo Capture and Enhanced Analysis",
+    "parent": 1472479,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1477462,
+    "type": "Task",
+    "state": "Closed",
+    "title": "Remove warnings from monorepo workflows",
+    "changed": "2026-07-16T06:33:32.75Z",
+    "category": "[DevOps] Apply DevOps Practices",
+    "parent": 1467831,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1477514,
+    "type": "Task",
+    "state": "Closed",
+    "title": "utility module sync with shared lib",
+    "changed": "2026-07-16T11:41:27.617Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1478248,
+    "type": "Task",
+    "state": "Closed",
+    "title": "cloud/storage utils sync",
+    "changed": "2026-07-17T08:17:24.407Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1478850,
+    "type": "Task",
+    "state": "In Review",
+    "title": "copy files from one blob to another",
+    "changed": "2026-07-17T06:38:34.827Z",
+    "category": "[DevOps] Apply DevOps Practices",
+    "parent": 1467831,
+    "norm_status": "In Progress"
+  },
+  {
+    "id": 1479017,
+    "type": "Task",
+    "state": "Closed",
+    "title": "pinning the library dependencies",
+    "changed": "2026-07-17T10:08:03.82Z",
+    "category": "[BE] Monorepo Migration for Backend Services",
+    "parent": 1464640,
+    "norm_status": "Completed"
+  },
+  {
+    "id": 1479049,
+    "type": "Bug",
+    "state": "New",
+    "title": "[SDK Mgr] - Carousel next button is disabled even their is a navigation configured.",
+    "changed": "2026-07-17T08:41:01.133Z",
+    "category": "Misc",
+    "parent": null,
+    "norm_status": "Planned"
+  }
+]

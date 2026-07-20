@@ -1,0 +1,235 @@
+<title>Digital Health – Weekly Status Report</title>
+<style>
+:root {
+  --bg: #f6f7f9;
+  --card-bg: #ffffff;
+  --text: #1a1d23;
+  --muted: #5b6270;
+  --border: #e4e7ec;
+  --accent: #2563eb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --card-bg: #1d2025;
+    --text: #edeef0;
+    --muted: #9aa1ac;
+    --border: #2c3038;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161a; --card-bg: #1d2025; --text: #edeef0; --muted: #9aa1ac; --border: #2c3038;
+}
+:root[data-theme="light"] {
+  --bg: #f6f7f9; --card-bg: #ffffff; --text: #1a1d23; --muted: #5b6270; --border: #e4e7ec;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+header {
+  margin-bottom: 32px;
+}
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 28px;
+  margin: 6px 0 4px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+.summary-row {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 8px;
+  flex-wrap: wrap;
+}
+.chip {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+.chip-num { font-size: 22px; font-weight: 700; }
+.chip-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.card h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.bucket { margin-bottom: 10px; }
+.bucket:last-child { margin-bottom: 0; }
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  margin-bottom: 6px;
+}
+ul { margin: 4px 0 0; padding-left: 20px; }
+li { margin: 4px 0; font-size: 14.5px; }
+footer {
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+.overflow-wrap { overflow-x: auto; }
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Digital Health Platform</div>
+  <h1>Weekly Status Report</h1>
+  <div class="subtitle">GD Sprint 49 (7 Jul 2026 - 20 Jul 2026) &nbsp;·&nbsp; Reporting period: 13 Jul 2026 - 20 Jul 2026</div>
+</header>
+<div class="summary-row">
+<div class="chip"><div class="chip-num" style="color:#1f9d55">12</div><div class="chip-label">Completed</div></div><div class="chip"><div class="chip-num" style="color:#c58a00">7</div><div class="chip-label">QA</div></div><div class="chip"><div class="chip-num" style="color:#2563eb">10</div><div class="chip-label">In Progress</div></div><div class="chip"><div class="chip-num" style="color:#6b7280">3</div><div class="chip-label">Planned</div></div>
+</div>
+<section class="card"><h2>SDK Manager – Brand & Sub-Brand Logo Management</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Enabled updating of parent brand logos across the brand hierarchy</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Advancing brand/sub-brand logo replace-and-override capability through QA, covering logo replacement, partner schema updates, and inheritance logic</li>
+</ul></div>
+</section>
+<section class="card"><h2>SDK Manager – Ad Hoc Requests & Support</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Added Singapore to the supported brand country list</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Resolved a calendar date-picker display and weekday-overlap issue</li>
+</ul></div>
+</section>
+<section class="card"><h2>Backend Monorepo Migration</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Completed shared library alignment and version pinning across services, syncing authentication, caching, error-handling, utility, and cloud storage libraries between the monorepo and multi-repo environments</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Validating build, test, and monitoring readiness ahead of release</li>
+</ul></div>
+</section>
+<section class="card"><h2>Reference-Based Image Processing (Replacing Base64 Uploads)</h2>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Migrating user image storage to a folder-based structure to support reference-based image processing</li>
+</ul></div>
+</section>
+<section class="card"><h2>Monorepo Migration – Observability Enhancements</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Improved logging and observability for the daily outcomes data migration job</li>
+</ul></div>
+</section>
+<section class="card"><h2>SDK Manager – Template Creation from SDK Versions</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Added SDK group and type filtering support to SDK version template APIs</li>
+</ul></div>
+</section>
+<section class="card"><h2>Feedback Capture (All Tools)</h2>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Extended feedback capture with additional configurable properties</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Building a drag-and-drop feedback form component, including unit test coverage</li>
+<li>Integrating the feedback form with backend APIs</li>
+</ul></div>
+</section>
+<section class="card"><h2>SDK Manager – SDK Version Creation Workflow</h2>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Verifying screen lifecycle actions in the Screen Builder</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Standardizing save, delete, and lifecycle behavior across versions and variants</li>
+</ul></div>
+</section>
+<section class="card"><h2>Toothscan Pro</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Completed requirements analysis and solution design for Toothscan Pro enhancements</li>
+</ul></div>
+</section>
+<section class="card"><h2>Weight Check – Configurable Breed & Weight Class Support</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Extended dog breed chart mapping to support additional weight classes</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Delivered configurable breed-size auto-selection behavior</li>
+</ul></div>
+</section>
+<section class="card"><h2>SDK Manager – Configurable Journey Navigation</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Completed UX design for navigation rules, view conditions, and screen lifecycle configuration</li>
+</ul></div>
+</section>
+<section class="card"><h2>Daily Production Log Monitoring</h2>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Ongoing daily production log monitoring and issue triage</li>
+</ul></div>
+</section>
+<section class="card"><h2>DevOps – Monorepo Deployment Automation</h2>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Updating the monorepo deployment workflow for environment-specific Azure Function Apps</li>
+</ul></div>
+</section>
+<section class="card"><h2>ToothScan 2.0 – Guided Photo Capture Experience</h2>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Extending configuration ID storage to all remaining outcome-tracking services</li>
+</ul></div>
+</section>
+<section class="card"><h2>DevOps Practices</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Cleaned up monorepo workflow warnings</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Migrating the blob storage file transfer process</li>
+</ul></div>
+</section>
+<section class="card"><h2>SDK Manager</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Fixed thumbnail preview display for brand logos inherited from a parent brand</li>
+</ul></div>
+</section>
+<section class="card"><h2>Misc</h2>
+<div class="bucket"><span class="badge" style="background:#1f9d5522;color:#1f9d55;border-color:#1f9d5555">Completed</span><ul>
+<li>Fixed environment banner dropdown scroll behavior</li>
+<li>Increased character limit and added preview support for shared content</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#c58a0022;color:#c58a00;border-color:#c58a0055">QA</span><ul>
+<li>Delivered copy-and-paste support for screen and SDK version components</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#2563eb22;color:#2563eb;border-color:#2563eb55">In Progress</span><ul>
+<li>Refactoring and modularizing the download report codebase</li>
+<li>Adding tracking identifiers to the screening submission button</li>
+</ul></div>
+<div class="bucket"><span class="badge" style="background:#6b728022;color:#6b7280;border-color:#6b728055">Planned</span><ul>
+<li>Addressing an environment banner error during environment switching</li>
+<li>Investigating a carousel navigation button issue</li>
+<li>Investigating a configuration history version display issue (currently on hold)</li>
+</ul></div>
+</section>
+<footer>Generated 2026-07-20 from Azure DevOps — Project Digital Health</footer>
+</div>
