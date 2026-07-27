@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital Health — Weekly Status Report</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d23; --sub:#5b6270; --border:#e4e7ec;
+    --accent:#2f6feb; --done:#1e8e5a; --done-bg:#e6f4ec;
+    --qa:#b06a00; --qa-bg:#fdf1de;
+    --prog:#2f6feb; --prog-bg:#eaf1fe;
+    --plan:#5b6270; --plan-bg:#eef0f3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14161a; --card:#1c1f26; --ink:#eceef2; --sub:#9aa1ad; --border:#2b2f38;
+      --accent:#6ea2ff; --done:#5fd39a; --done-bg:#123324;
+      --qa:#e8b45e; --qa-bg:#3a2c10;
+      --prog:#6ea2ff; --prog-bg:#132743;
+      --plan:#9aa1ad; --plan-bg:#22262e;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161a; --card:#1c1f26; --ink:#eceef2; --sub:#9aa1ad; --border:#2b2f38;
+    --accent:#6ea2ff; --done:#5fd39a; --done-bg:#123324;
+    --qa:#e8b45e; --qa-bg:#3a2c10;
+    --prog:#6ea2ff; --prog-bg:#132743;
+    --plan:#9aa1ad; --plan-bg:#22262e;
+  }
+  :root[data-theme="light"]{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d23; --sub:#5b6270; --border:#e4e7ec;
+    --accent:#2f6feb; --done:#1e8e5a; --done-bg:#e6f4ec;
+    --qa:#b06a00; --qa-bg:#fdf1de;
+    --prog:#2f6feb; --prog-bg:#eaf1fe;
+    --plan:#5b6270; --plan-bg:#eef0f3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.45;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:40px 24px 80px;}
+  header{margin-bottom:28px;}
+  .eyebrow{color:var(--accent); font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase;}
+  h1{font-size:28px; margin:6px 0 4px; letter-spacing:-0.01em;}
+  .meta{color:var(--sub); font-size:14px;}
+  .summary{
+    display:flex; gap:12px; margin:24px 0 32px; flex-wrap:wrap;
+  }
+  .stat{
+    flex:1 1 120px; background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:14px 16px; min-width:110px;
+  }
+  .stat .n{font-size:24px; font-weight:700;}
+  .stat .l{font-size:12px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:2px;}
+  .stat.done .n{color:var(--done);}
+  .stat.qa .n{color:var(--qa);}
+  .stat.prog .n{color:var(--prog);}
+  .stat.plan .n{color:var(--plan);}
+  section.card{
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:20px 24px; margin-bottom:16px;
+  }
+  h2{font-size:17px; margin:0 0 14px; padding-bottom:10px; border-bottom:1px solid var(--border);}
+  .group{margin-bottom:14px;}
+  .group:last-child{margin-bottom:0;}
+  .badge{
+    display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.04em; padding:3px 9px; border-radius:20px; margin-bottom:8px;
+  }
+  .badge.completed{color:var(--done); background:var(--done-bg);}
+  .badge.qa{color:var(--qa); background:var(--qa-bg);}
+  .badge.inprogress{color:var(--prog); background:var(--prog-bg);}
+  .badge.planned{color:var(--plan); background:var(--plan-bg);}
+  ul{margin:0; padding-left:20px;}
+  li{margin-bottom:6px; font-size:14.5px;}
+  li:last-child{margin-bottom:0;}
+  footer{color:var(--sub); font-size:12.5px; text-align:center; margin-top:36px;}
+  @media (max-width:520px){
+    .wrap{padding:24px 16px 60px;}
+    h1{font-size:23px;}
+    section.card{padding:16px 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Digital Health · Weekly Status Report</div>
+    <h1>Sprint 50 Update</h1>
+    <div class="meta">Sprint window: Jul 21 – Aug 3, 2026 &nbsp;·&nbsp; Reporting period: Jul 20 – Jul 27, 2026</div>
+  </header>
+
+  <div class="summary">
+    <div class="stat done"><div class="n">2</div><div class="l">Completed</div></div>
+    <div class="stat qa"><div class="n">1</div><div class="l">In QA</div></div>
+    <div class="stat prog"><div class="n">13</div><div class="l">In Progress</div></div>
+    <div class="stat plan"><div class="n">18</div><div class="l">Planned</div></div>
+  </div>
+
+  <section class="card">
+    <h2>Feedback Capture for Journey Exit and Completion</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul>
+        <li>Extending feedback form launch support across SDK actions and screen lifecycle events</li>
+        <li>Enhancing feedback question configuration with placeholder text, character limits, and validation messaging</li>
+      </ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul>
+        <li>Adding analytics tracking for feedback form usage across all tools</li>
+        <li>Dev environment sanity testing planned for the feedback feature across SDK tools and SDK Manager</li>
+        <li>Enabling the feedback feature by default across all SDK templates</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Monorepo Migration for Backend Services</h2>
+    <div class="group">
+      <span class="badge completed">Completed</span>
+      <ul><li>Validated build, test, and monitoring readiness ahead of release, resolving schema and logging dependency issues</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Migrating the Tooth Check Tool API to the shared monorepo</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Migrating the Poop Scan Tool API to the shared monorepo</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Application-Side Role Assignment (RBAC)</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Building the user role data model and repository to support role-based access control</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Developing user role service logic and safety guards for role-based access control</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Template Creation from SDK Version (SDK Manager)</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul>
+        <li>Delivered ability to create SDK version templates from an existing SDK version</li>
+        <li>Delivered functionality to export SDK templates as downloadable JSON files</li>
+      </ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Enabling SDK version template creation directly from an uploaded JSON file</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>SDK Manager Enhancements</h2>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Investigating handling for on-hold/paused service integrations across SDK versions</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Platform Stability and Performance Modernization</h2>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Planned enhancements to support adding/removing additional properties in the Service Catalog</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Ad Hoc Requests &amp; Support</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Advancing migration of CocoaScan and SFMC token caching to Redis to improve reliability and performance</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul><li>Expanding unit test coverage as part of the Redis token cache migration</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Daily Production Logs Monitoring</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Rolling out daily production log monitoring to improve system visibility and issue detection</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>DevOps Practices &amp; Platform Reliability</h2>
+    <div class="group">
+      <span class="badge completed">Completed</span>
+      <ul><li>Completed domain whitelisting across production and pre-production environments</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Validating secure file access (SAS URL) using self-hosted runner infrastructure</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>ToothScan Pro Web</h2>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul><li>Defined technical approach and solution design for ToothScan Pro Web</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Misc</h2>
+    <div class="group">
+      <span class="badge qa">QA</span>
+      <ul><li>Extended region and country lists with complete, standardized coverage</li></ul>
+    </div>
+    <div class="group">
+      <span class="badge inprogress">In Progress</span>
+      <ul>
+        <li>Improving consistency of save, delete, and lifecycle actions for SDK versions and variants</li>
+        <li>Refactoring and modularizing the download-results codebase across Check SDK tools</li>
+        <li>Evaluating Devin AI as a potential development acceleration tool</li>
+      </ul>
+    </div>
+    <div class="group">
+      <span class="badge planned">Planned</span>
+      <ul>
+        <li>Fixing configuration history not reflecting version changes in bundle management</li>
+        <li>Resolving environment banner errors when switching between Dev, Stage, and Pre-Prod</li>
+        <li>Migrating the Campaign API to the shared monorepo</li>
+        <li>Conducting sprint quality assurance verification activities, including carryover items from the previous sprint</li>
+        <li>Correcting template icon design inconsistencies for ToothScan templates</li>
+        <li>Fixing missing breed option in the Puppy Weight Check weight class list</li>
+        <li>Fixing non-clickable result screen options in the ToothScan 2.0 template</li>
+        <li>Fixing country list sorting issue in brand settings</li>
+        <li>Fixing calendar date selection issue in Puppy Weight Check</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Source: Azure DevOps — Digital Health project, GD Sprint 50 · Generated automatically</footer>
+</div>
+</body>
+</html>
